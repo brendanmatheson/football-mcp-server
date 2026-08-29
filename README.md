@@ -74,7 +74,7 @@ Restart Claude Desktop and it'll show up as a connected tool — from there you 
 
 Runs as a standard containerized HTTP service (see `Dockerfile`) — set `MCP_TRANSPORT=http` and it serves over Streamable HTTP instead of stdio. A shared API key (`FOOTBALL_MCP_API_KEY` env var) and a per-IP rate limit (`middleware.py`) gate the public endpoint.
 
-**Live server:** _[add your deployed URL here once it's live]_
+**Live server:** (https://football-mcp-server-production.up.railway.app/)
 
 ## A few honest notes
 
