@@ -2,3 +2,4 @@ fastmcp>=3.4.7
 httpx>=0.28.1
 pandas>=2.0
 pulp>=2.8
+understatapi>=0.7.1
