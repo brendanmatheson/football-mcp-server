@@ -1,5 +1,5 @@
 """
-server.py — Football Intelligence & Optimization Server (FastMCP).
+server.py — Football Intelligence & Optimisation Server (FastMCP).
 
 Run locally with the MCP Inspector:
     uv run fastmcp dev inspector server.py
@@ -15,7 +15,7 @@ Tools:
     optimize_fpl_squad      — builds the optimal 15-man squad + starting XI under budget
 
 Prompts (ready-made structured asks for an MCP client to surface directly):
-    weekly_transfer_advice  — chains fixtures + value picks + optimizer into transfer advice
+    weekly_transfer_advice  — chains fixtures + value picks + optimiser into transfer advice
     captain_pick_advice     — chains fixtures + form into a captain/vice-captain recommendation
 """
 
@@ -30,7 +30,7 @@ from value_picks import find_value_picks as run_find_value_picks
 from understat_client import UnderstatDataSource
 from xg_enrichment import merge_xg_data
 
-mcp = FastMCP("Football Intelligence & Optimization Server")
+mcp = FastMCP("Football Intelligence & Optimisation Server")
 _understat = UnderstatDataSource()
 
 # Understat's season format is the year the season STARTED. Try the current

@@ -1,6 +1,6 @@
-# Football Intelligence & Optimization Server
+# Football Intelligence & Optimisation Server
 
-An MCP (Model Context Protocol) server that gives Claude live Fantasy Premier League data, expected-goals analytics, and a genuine constrained-optimization engine — so you can ask Claude to build your FPL squad, compare players, or get transfer advice, backed by real data rather than a hard-coded response.
+An MCP (Model Context Protocol) server that gives Claude live Fantasy Premier League data, expected-goals analytics, and a genuine constrained-optimisation engine — so you can ask Claude to build your FPL squad, compare players, or get transfer advice, backed by real data rather than a hard-coded response.
 
 ## Why this exists
 
@@ -20,7 +20,7 @@ Built as a hands-on demonstration spanning three things I actually work with: da
 **Prompts** (ready-made structured asks an MCP client can surface directly):
 | Prompt | What it chains together |
 |---|---|
-| `weekly_transfer_advice` | Fixtures + value picks + the optimizer, into one transfer recommendation |
+| `weekly_transfer_advice` | Fixtures + value picks + the optimiser, into one transfer recommendation |
 | `captain_pick_advice` | Fixtures + form, into a captain/vice-captain recommendation |
 
 ## Example prompts to try
@@ -46,7 +46,7 @@ Understat (xG) ────┘         (data layer)    (scoring proxy)      │
                                           server.py (FastMCP: 5 tools + 2 prompts)
 ```
 
-Two independent, unofficial data sources feed this: the FPL API (free, undocumented but stable) and Understat (scraped, less stable — handled with retries, caching, and graceful fallback to last season's data when the current season is too new to have stats yet). Points predictions use an empirical-Bayes shrinkage estimator so a one-match fluke doesn't skew the optimizer. The optimizer itself is a genuine mixed-integer linear program (via PuLP/CBC) — not a greedy heuristic — jointly solving squad selection, starting XI, and captaincy in one pass under FPL's real constraints (budget, position quotas, max 3 players per club).
+Two independent, unofficial data sources feed this: the FPL API (free, undocumented but stable) and Understat (scraped, less stable — handled with retries, caching, and graceful fallback to last season's data when the current season is too new to have stats yet). Points predictions use an empirical-Bayes shrinkage estimator so a one-match fluke doesn't skew the optimiser. The optimiser itself is a genuine mixed-integer linear program (via PuLP/CBC) — not a greedy heuristic — jointly solving squad selection, starting XI, and captaincy in one pass under FPL's real constraints (budget, position quotas, max 3 players per club).
 
 ## Tech stack
 
@@ -65,7 +65,7 @@ That opens the MCP Inspector in your browser, where you can call any tool direct
 ## Connecting to Claude Desktop
 
 ```bash
-uv run fastmcp install claude-desktop server.py --name "Football Optimizer"
+uv run fastmcp install claude-desktop server.py --name "Football Optimiser"
 ```
 
 Restart Claude Desktop and it'll show up as a connected tool — from there you can just talk to it in plain English.

@@ -1,9 +1,9 @@
-# Football Intelligence & Optimization Server — deployment image
+# Football Intelligence & Optimisation Server — deployment image
 
 # Platform pinned explicitly: PuLP bundles a CBC solver binary compiled for
 # linux/amd64 specifically (confirmed at pulp/solverdir/cbc/linux/i64/cbc).
 # Building on an Apple Silicon Mac without this would default to arm64 and
-# silently break the optimizer inside the container.
+# silently break the optimiser inside the container.
 FROM --platform=linux/amd64 python:3.12-slim
 
 # uv, since that's the toolchain this project already uses locally —
